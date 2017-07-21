@@ -33,7 +33,7 @@ http {
             upstream = "server.hcm.com", -- defined by "upstream"
             type = "http",
 
-            http_req = "GET /status HTTP/1.0\r\nHost: server.hcm.com\r\n\r\n",
+            http_req = "GET /ping HTTP/1.0\r\nHost: server.hcm.com\r\n\r\n",
                     -- raw HTTP request for checking
 
             interval = 2000,  -- run the check cycle every 2 sec
