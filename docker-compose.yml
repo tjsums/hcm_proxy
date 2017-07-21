@@ -1,0 +1,9 @@
+test:
+    build: .
+    ports:
+        - "80:80"
+        - "443:443"
+    environment:
+      - 'HCM_CLIENT_LIST=172.17.0.2:8080'
+      - 'HCM_SERVER_LIST=www.hcmcloud.cn:80'
+      - 'IMG_SERVER_LIST=www.hcmcloud.cn:80'
