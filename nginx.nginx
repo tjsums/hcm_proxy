@@ -9,7 +9,6 @@ events {
 http {
     include       mime.types;
 
-    include conf.docker.d/*.conf;
     include conf.d/*.conf;
 
     gzip on;
