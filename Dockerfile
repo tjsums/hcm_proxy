@@ -1,13 +1,10 @@
-FROM openresty/openresty:latest
+FROM haproxy:latest
 MAINTAINER tjsums<tjsums@qq.com>
 
 ENV SERVER_LIST ''
 
-ADD . /usr/local/openresty/nginx/conf
-RUN chmod +x /usr/local/openresty/nginx/conf/gene_up_stream.sh
+ADD . /
 
+RUN chmod +x /start.sh && chmod +x /restart.sh
 
-ENTRYPOINT /usr/local/openresty/nginx/conf/gene_up_stream.sh && \
- /usr/local/openresty/bin/openresty -c /usr/local/openresty/nginx/conf/nginx.nginx -g "daemon off;"
-
-EXPOSE 80
+CMD ["bash", "/start.sh"]
