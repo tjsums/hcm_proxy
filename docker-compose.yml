@@ -2,8 +2,10 @@ test:
     build: .
     ports:
         - "80:80"
+        - "1936:1936"
     environment:
       - 'HCM_BACKEND_HCM_CORE=192.168.199.171:8000'
-      - 'HCM_BACKEND_HCM_API=192.168.199.171:8000 open.hcmcloud.cn:8000'
+      - 'HCM_BACKEND_HCM_API=192.168.199.171:8000 open.hcmcloud.cn:80'
       - 'HCM_URL_1=default:HCM_CORE'
       - 'HCM_URL_2=/api:HCM_API'
+
