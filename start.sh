@@ -4,6 +4,8 @@ HAPROXY="/usr/local/sbin/haproxy"
 PIDFILE="/run/haproxy.pid"
 CONFIG="/haproxy.cfg"
 
+cp -f /haproxy.cfg.tmpl /haproxy.cfg
+
 #处理URL注册
 INDEX=0
 for i in ${!HCM_URL@}
