@@ -30,7 +30,7 @@ do
     INDEX=0
     for j in ${!i}
         do
-            echo "      server host"${INDEX}" "${j}" check inter 2000 rise 2 fall 3" >> haproxy.cfg
+            echo "      server "${j}" "${j}" check inter 2000 rise 2 fall 3" >> haproxy.cfg
             INDEX=$((INDEX + 1))
         done
 done
