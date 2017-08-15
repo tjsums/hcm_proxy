@@ -7,4 +7,5 @@ ADD . /
 
 RUN chmod +x /start.sh && chmod +x /restart.sh
 
+EXPOSE [80,443]
 CMD ["bash", "/start.sh"]
