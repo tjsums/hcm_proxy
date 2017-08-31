@@ -8,6 +8,7 @@ global
     group root
     daemon
     stats socket /var/run/haproxy.stats level admin
+    tune.ssl.default-dh-param 2048
 defaults
     balance roundrobin
     log global
@@ -30,7 +31,8 @@ listen stats
     stats realm Haproxy\ Statistics
     stats uri /
     stats auth stats:stats
-frontend default_port_80
-    bind :80
-    reqadd X-Forwarded-Proto:\ http
+
+frontend default
+    bind *:80
+    bind *:443 ssl crt /certificate/haproxy.pem
     maxconn 4096

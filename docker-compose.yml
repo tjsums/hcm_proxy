@@ -2,6 +2,7 @@ test:
     build: .
     ports:
         - "80:80"
+        - "443:443"
         - "1936:1936"
     environment:
       - 'HCM_BACKEND_HCM_CORE=192.168.199.171:8000'
